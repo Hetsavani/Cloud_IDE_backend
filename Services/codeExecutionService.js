@@ -249,8 +249,8 @@ const execCode = (language, code, input, filename) => {
       childProcess.on("error", (err) => {
         console.error("Failed to spawn child process:", err);
         resolve({
-          stdout: err.trimEnd(),
-          stderr: err.trimEnd(),
+          stdout: "",
+          stderr: err.message,
           exit_code: -1,
           execution_time: "0",
           memory: "0",

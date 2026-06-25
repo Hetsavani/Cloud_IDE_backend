@@ -7,6 +7,7 @@ const authRoutes = require("./Routes/authRoutes");
 const fileRoutes = require("./Routes/fileRoutes");
 const executionRoutes = require("./Routes/executionRoutes");
 const terminalRoutes = require("./Routes/terminalRoutes"); // Import terminal routes
+const ocrRoutes = require("./Routes/ocrRoutes");
 const http = require("http");
 
 const app = express();
@@ -25,6 +26,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/files", fileRoutes);
 app.use("/api/execute", executionRoutes);
 app.use("/api/terminal", terminalRoutes); // Use terminal routes
+app.use("/api/ocr", ocrRoutes);
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
